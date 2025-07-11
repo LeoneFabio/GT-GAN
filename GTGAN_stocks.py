@@ -804,12 +804,12 @@ def train(
             visualize(dataset, device, generated_data,args,name)
         if step == 1000:
             path = here / 'stock_model/stock_pretrained'
-            torch.save(embedder.state_dict(), path+"/embedder_1000.pt")
-            torch.save(recovery.state_dict(), path+"/recovery_1000.pt")
+            torch.save(embedder.state_dict(), path/"embedder_1000.pt")
+            torch.save(recovery.state_dict(), path/"recovery_1000.pt")
         if step == 5000:
             path = here / 'stock_model/stock_pretrained'
-            torch.save(embedder.state_dict(), path+"/embedder_5000.pt")
-            torch.save(recovery.state_dict(), path+"/recovery_5000.pt")
+            torch.save(embedder.state_dict(), path/"embedder_5000.pt")
+            torch.save(recovery.state_dict(), path/"recovery_5000.pt")
     print("Finish Embedding Network Training")
     path = here / 'stock_model/stock_pretrained'
     print(load)
