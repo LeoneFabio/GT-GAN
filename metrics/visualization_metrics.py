@@ -2,6 +2,9 @@ from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
+import seaborn as sns
+import os
+
 font_size = 22
 plt.rc('font', size=font_size) 
 plt.rc('axes', titlesize=font_size) 
@@ -12,6 +15,9 @@ plt.rc('legend', fontsize=font_size)
 plt.rc('figure', titlesize=font_size)
 
 def visualization(ori_data, generated_data1, analysis, args):
+    
+    # Make sure the save directory exists
+    os.makedirs(args.save_dir, exist_ok=True)
     
     # Analysis sample size (for faster computation)
     anal_sample_no = min([1000, len(ori_data)])
